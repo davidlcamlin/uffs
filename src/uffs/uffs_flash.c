@@ -663,8 +663,9 @@ int uffs_FlashWritePageCombine(uffs_Device *dev,
 	struct uffs_MiniHeaderSt *header;
 	int ret = UFFS_FLASH_UNKNOWN_ERR;
 	UBOOL is_bad = U_FALSE;
-	uffs_Buf *verify_buf;
+
 #ifdef CONFIG_PAGE_WRITE_VERIFY
+	uffs_Buf *verify_buf;//DL: moved here to remove compiler warning if define not set
 	uffs_Tags chk_tag;
 #endif
 	

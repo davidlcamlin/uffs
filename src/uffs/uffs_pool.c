@@ -312,9 +312,16 @@ static void * FindNextAllocatedInSmallPool(uffs_Pool *pool, void *from)
 	for (e = pool->free_list; e; e = e->next)
 		map |= (1 << uffs_PoolGetIndex(pool, e));
 
-	for (i = uffs_PoolGetIndex(pool, from);
+/*	for (i = uffs_PoolGetIndex(pool, from);
 			(map & (1 << i)) && i < 32 && i < pool->num_bufs;
 				i++);
+*/
+	for (i = uffs_PoolGetIndex(pool, from); ;i++)//DL: had to rewrite since compiler would crash
+	{
+		if((map & (1 << i)) == 0)break;
+		if(i >= 32 || i >= pool->num_bufs)break;
+	}
+
 
 	return i < 32 && i < pool->num_bufs ?
 			uffs_PoolGetBufByIndex(pool, i) : NULL;

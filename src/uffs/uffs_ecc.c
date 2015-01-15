@@ -289,7 +289,7 @@ int uffs_EccCorrect(void *data, int data_len,
  *
  * \return 12 bits ECC data (lower 12 bits).
  */
-u16 uffs_EccMake8(void *data, int data_len)
+u16 uffs_EccMake8(const void *data, int data_len)
 {
 	u8 *p = (u8 *)data;
 	u8 b, col_parity = 0, line_parity = 0, line_parity_prime = 0;

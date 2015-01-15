@@ -47,6 +47,7 @@ typedef void * OSSEM;
 struct uffs_DebugMsgOutputSt {
 	void (*output)(const char *msg);
 	void (*vprintf)(const char *fmt, va_list args);
+	void (*logMetrics)(const int level);
 };
 
 void uffs_SetupDebugOutput(void);
