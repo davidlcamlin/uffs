@@ -81,7 +81,7 @@ TCC = $(TCC) -DSQLITE_ENABLE_IOTRACE
 #
 # Prevent warnings about "insecure" runtime library functions being used.
 #
-TCC = $(TCC) -D_CRT_SECURE_NO_DEPRECATE -D_CRT_SECURE_NO_WARNINGS
+TCC = $(TCC) -D_CRT_SECURE_NO_DEPRECATE -D_CRT_SECURE_NO_WARNINGS -Di64=int64_t -Du64=uint64_t
 
 #
 # Use native Win32 heap instead of malloc/free?
