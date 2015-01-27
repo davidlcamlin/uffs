@@ -43,6 +43,8 @@
 #include "uffs/uffs_core.h"
 #include "uffs/uffs.h"
 #include "uffs/uffs_pool.h"
+#include "uffs_config.h"
+
 
 #ifdef __cplusplus
 extern "C"{
@@ -109,7 +111,7 @@ typedef struct uffs_ObjectInfoSt {
  *        this defines the maximum pages per block you can have.
  *        e.g. '9' ==> maximum 512 pages per block
  **/
-#define UFFS_TAG_PAGE_ID_SIZE_BITS  6
+//#define UFFS_TAG_PAGE_ID_SIZE_BITS  6 //moved into uffs_config.h per platform
 
 #if UFFS_TAG_RESERVED_BITS > 10
 #error "UFFS_TAG_PAGE_ID_SIZE_BITS can not bigger than 10 !"

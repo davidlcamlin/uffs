@@ -70,6 +70,7 @@
  */
 #define MAX_PAGE_BUFFERS		40
 
+#define UFFS_TAG_PAGE_ID_SIZE_BITS  6
 
 /** 
  * \def CLONE_BUFFER_THRESHOLD
@@ -103,6 +104,11 @@
  *       the smaller the value the frequently the buffer will be flushed.
  */
 #define MAX_DIRTY_PAGES_IN_A_BLOCK	32
+
+/**
+ * \def MAX_DIRTY_BUF_GROUPS
+ */
+#define MAX_DIRTY_BUF_GROUPS	3
 
 /**
  * \def CONFIG_ENABLE_UFFS_DEBUG_MSG
